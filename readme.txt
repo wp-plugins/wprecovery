@@ -1,11 +1,11 @@
-﻿=== WPRecovery ===
+=== WPRecovery ===
 Contributors: CMSHelpLive
 Donate link: http://cmshelplive.com/
 Tags: backup, recover, wordpress backup, wordpress recover, Wordpress recovery, recover wordpress, restore wordpress, backup, back up, backup wordpress, wordpress backup, recover wordpress site, restore wordpress site, backup wordpress site, best wordpress plugin, amazon backup, back up, backup, backups, Cloud Files, cloudian, cloudn, connectria, constant cloud, copy, database backup, db backup, dreamhost, dreamobjects backup, dropbox backup, duplicate, eucalyptus, ftp backup, FTPS, full backup, google cloud storage, google drive backup, migrate, multisite, mysql backup, nifty, nimbula, openstack, rackspace backup, rackspace cloud files, restoration, restore, s3 backup, scp, sftp backup, swift, webdav backup, website backup, backup dropbox, backup plugin, blog transfer, buddypress, cloner, database, database backup, database restore, files, full backup, site move, theme, transfer, upload, xcloner
 
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,11 +48,17 @@ Yes, WPRecovery backs up both WordPress files and database.
 
 == Changelog ==
 
+= 2.0 =
+* Now supports multi backups and restoring.
+
 = 1.0 =
 * First Release
 
 
 == Upgrade Notice ==
+
+= 2.0 =
+* Now supports multi backups and restoring.
 
 = 1.0 =
 Initial Release

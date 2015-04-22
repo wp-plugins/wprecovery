@@ -4,7 +4,7 @@ Plugin Name: WP Recovery
 Plugin URI: http://cmshelplive.com
 Description: Restore Your Site If It Ever Stops Working Correctly
 Author: CMSHelpLive
-Version: 1.0
+Version: 2.0
 Author URI: http://cmshelplive.com/
 License: gpl2
 */
@@ -39,7 +39,7 @@ function activate_one_click_rollback_fun()
     @mkdir(WP_CONTENT_DIR.'/wprecovery_backup/');
 	}
 	
-	chl_backup_on_activation();
+	chl_backup();
 }
 add_action('admin_menu', 'one_click_rollback_menu');
 /*Defines enqueue style/ script for dashboard*/
@@ -118,25 +118,7 @@ function chl_backup()
 	wp_schedule_single_event( time() + 5 , 'one_click_backup',array( "$action", "$values","$time") );
 	//wp_schedule_single_event( time()+60,'one_click_backup', $args );
 }
-function chl_backup_on_activation()
-{
-	//print_r($_GET);die;
-	$values = serialize($_GET);
-	global $wpdb;
-	$action = $_GET['action'];
-	$time = date("jS F g:i a");
-	
-	
-	wp_schedule_single_event( time() + 7 , 'one_click_backup',array( "$action 1", "$values","$time") );
-	wp_schedule_single_event( time() + 9 , 'one_click_backup',array( "$action 2", "$values","$time") );
-	wp_schedule_single_event( time() + 11 , 'one_click_backup',array( "$action 3", "$values","$time") );
-	wp_schedule_single_event( time() + 13 , 'one_click_backup',array( "$action 4", "$values","$time") );
-	wp_schedule_single_event( time() + 15 , 'one_click_backup',array( "$action 5", "$values","$time") );
-	wp_schedule_single_event( time() + 17 , 'one_click_backup',array( "$action 6", "$values","$time") );
-	wp_schedule_single_event( time() + 19 , 'one_click_backup',array( "$action 7", "$values","$time") );
-	wp_schedule_single_event( time() + 21 , 'one_click_backup',array( "$action 8", "$values","$time") );
-	//wp_schedule_single_event( time()+60,'one_click_backup', $args );
-}
+
 if(isset($_GET['action']) && $_GET['action']=='upgrade-plugin')
 {
 	chl_backup();
